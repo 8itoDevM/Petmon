@@ -1,15 +1,13 @@
 #pragma once
-#include "Scenes.h"
-#include <map>
-#include <string>
 
 class ScreenManager{
-public:
-    void RegisterScene(const std::string& name, Scenes scene);
-    void ChangeScene(const std::string& name);
-    void Update();
-    void Draw();
+public: 
+    ScreenManager();
+    void ChangeScene(int scene);
+    void DrawScene(int scene);
+    void UpdateScene(int scene);
+    int GetCurrentScene();
 private:
-    std::map<std::string, Scenes> scenes;
-    Scenes* current_scene = nullptr;
+    int scene_id;
+    int scenes[];
 };

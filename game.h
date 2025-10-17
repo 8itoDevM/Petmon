@@ -4,8 +4,10 @@
 class Game{
 public:
     Game();
-    ScreenManager manager;
     void Draw();
     void Update();
+    void Initialize();
+
+    ScreenManager scene_manager;
 private:
 };

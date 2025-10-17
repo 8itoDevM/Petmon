@@ -1,24 +1,17 @@
 #include "ScreenManager.h"
+#include "raylib.h"
 
-void ScreenManager::RegisterScene(const std::string &name, Scenes scene)
-{
-    scenes[name] = scene;
+ScreenManager::ScreenManager(){
+    scene_id = 0;
+    scenes[0];
 }
 
-void ScreenManager::ChangeScene(const std::string &name)
-{
-    current_scene = &scenes[name];
-    if (current_scene->Init) current_scene->Init();
+void ScreenManager::ChangeScene(int scene){
+    scenes[scene];
+    scene_id = scene;
 }
 
-void ScreenManager::Update()
+int ScreenManager::GetCurrentScene()
 {
-    if (current_scene && current_scene->Update)
-        current_scene->Update();
-}
-
-void ScreenManager::Draw()
-{
-    if (current_scene && current_scene->Update)
-        current_scene->Draw();
+    return scene_id;
 }

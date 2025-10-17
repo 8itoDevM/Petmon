@@ -8,9 +8,9 @@
 
     ./a.out
 
-    g++ main.cpp game.cpp GameScenes.cpp ScreenManager.cpp -lraylib -o Petmon
+    g++ main.cpp game.cpp ScreenManager.cpp -lraylib -o Petmon
 
-    ./plataformer.out
+    ./Petmon.out
 */
 
 int main(void)
@@ -19,7 +19,7 @@ int main(void)
 
     Game game = Game();
 
-    InitWindow(screen_width, screen_height, "Poetmon");
+    InitWindow(screen_width, screen_height, "Petmon");
     SetTargetFPS(60);
 
     while (!WindowShouldClose())
@@ -27,6 +27,7 @@ int main(void)
         game.Update();
 
         BeginDrawing();
+            ClearBackground(BLACK);
             game.Draw();
         EndDrawing();
     }
