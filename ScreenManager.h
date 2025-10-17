@@ -9,5 +9,4 @@ public:
     int GetCurrentScene();
 private:
     int scene_id;
-    int scenes[];
 };

@@ -8,7 +8,7 @@
 
     ./a.out
 
-    g++ main.cpp game.cpp ScreenManager.cpp -lraylib -o Petmon
+    g++ main.cpp game.cpp ScreenManager.cpp Button.cpp -lraylib -o Petmon
 
     ./Petmon.out
 */
@@ -16,11 +16,10 @@
 int main(void)
 {
     int screen_width = 480, screen_height = 432;
-
-    Game game = Game();
-
     InitWindow(screen_width, screen_height, "Petmon");
     SetTargetFPS(60);
+
+    Game game = Game();
 
     while (!WindowShouldClose())
     {
