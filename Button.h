@@ -16,10 +16,10 @@ public:
     Color _text_color;
 
     bool selected = false;
-    bool clicked = false;
 
     void Draw();
     void Update();
+    bool Click();
 private:
     Vector2 size;
     Vector2 CalculateSize(std::string text, int font_size, Font font, Vector2 magrin);

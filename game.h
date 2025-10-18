@@ -9,8 +9,9 @@ public:
     void Update();
     void Initialize();
 
+    Camera2D camera;
     ScreenManager scene_manager;
 private:
-    Button play;
+    Button buttons[10];
     bool initialized = false;
 };

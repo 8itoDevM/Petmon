@@ -46,6 +46,14 @@ void Button::Update()
     wasSelected = selected; 
 }
 
+bool Button::Click()
+{
+    if(selected && IsKeyPressed(KEY_ENTER)){
+        return true;
+    }
+    return false;
+}
+
 Vector2 Button::CalculateSize(std::string text, int font_size, Font font, Vector2 magrin)
 {
     return Vector2Add(MeasureTextEx(font, text.c_str(), font_size, 2), magrin);
